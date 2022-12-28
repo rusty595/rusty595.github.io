@@ -1,0 +1,34 @@
+<head>
+<title>Trains</title>
+<meta name="author" content="Rusty595">
+<meta name="description" content="and train-adjacent content">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:title" content="Trains">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://pbs.twimg.com/media/Dx834VGWoAEbtDy.jpg">
+<meta property="og:url" content="https://rusty595.github.io/trains">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:creator" content="@Rusty595">
+<meta name="twitter:image" content="https://pbs.twimg.com/media/Dx834VGWoAEbtDy.jpg">
+<link rel="shortcut icon" type="image/png" href="https://avatars.githubusercontent.com/u/10696825"/>
+</head>
+<body lang=EN-GB style="text-align: center">
+  <h1>Trains</h1>
+  <p>and train-adjacent content</p>
+  <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
+  <script>
+  $.ajax({
+    url:'trains.db',
+    success: function (data){
+      var lines = data.split('\n');
+      var text = "";
+      for (var i = 0; i < lines.length; i++)
+        text += "<blockquote class=\"twitter-tweet\" align=center data-conversation=none><a href=\"" + lines[i] + "\">" + lines[i] + "</a></blockquote>"
+      var el = document.getElementById('tweets'); 
+      el.innerHTML = text;
+    }
+  });
+  </script>
+  <div id="tweets"></div>
+  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</body>
