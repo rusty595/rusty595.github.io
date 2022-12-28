@@ -6,18 +6,19 @@
 </head>
 <body lang=EN-GB style="text-align: center">
   <h1>Wildlife</h1>
-  <script type="text/javascript">
-  var reader = new FileReader();
-  reader.onload = function (e) {
-    var output = e.target.result.split('\n');
-    var text = "";
-    for (var i = 0; i < output.length; i++)
-      text += "<blockquote class=\"twitter-tweet\" align=center><a href=\"" + output[i] + "\">" + output[i] + "</a></blockquote><br>"
-    var el = document.getElementById('tweets'); 
-    el.innerHTML = output;
-  };
-  reader.readAsText("wildlife.db");
-  <!--"<blockquote class=\"twitter-tweet\" align=center><a href=\"" . $line . "\">" . $line . "</a></blockquote>"-->
+  <script src="jquery.js"></script>
+  <script>
+  $.ajax({
+    url:'wildlife.db',
+    success: function (data){
+      var lines = data.split('\n');
+      var text = "";
+      for (var i = 0; i < lines.length; i++)
+        text += "<blockquote class=\"twitter-tweet\" align=center><a href=\"" + lines[i] + "\">" + lines[i] + "</a></blockquote><br>"
+      var el = document.getElementById('tweets'); 
+      el.innerHTML = output;
+    }
+  });
   </script>
   <div id="tweets"></div>
   <blockquote class="twitter-tweet" align=center><p lang="en" dir="ltr">cat<br>what does he see <a href="https://t.co/vA6dNxH3K2">pic.twitter.com/vA6dNxH3K2</a></p>&mdash; Rusty W 595 󾓪 (@Rusty595) <a href="https://twitter.com/Rusty595/status/1591809842322317312?ref_src=twsrc%5Etfw">November 13, 2022</a></blockquote>
