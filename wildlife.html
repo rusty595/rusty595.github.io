@@ -10,7 +10,7 @@
   $db = fopen("wildlife.db", "r") or die("Unable to open wildlife.db");
   while(!feof($db)) {
     $line = fgets($db);
-    echo "<blockquote class=\"twitter-tweet\"><a href=\"" + $line + "\">" + $line + "</a></blockquote>";
+    echo "<blockquote class=\"twitter-tweet\"><a href=\"" . $line . "\">" . $line . "</a></blockquote>";
   }
   fclose($db);
   ?>
