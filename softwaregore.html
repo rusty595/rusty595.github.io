@@ -22,19 +22,9 @@
   <p>⚠&#xFE0F; Rusty595.exe has stopped responding<br/>
   <button type="button">End Task</button> <button type="button">Cancel</button></p>
   <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
+  <script src="moment.js"></script>
   <script>
-  $.ajax({
-    url:'softwaregore.db',
-    success: function (data){
-      var lines = data.split('\n');
-      var text = "";
-      for (var i = 0; i < lines.length; i++)
-        if (lines[i].length > 0)
-          text += "<blockquote class=\"twitter-tweet\" align=center data-conversation=none><img height=32 style=\"image-rendering: pixelated; vertical-align: middle;\" src=\"/img/loading.gif\"><a href=\"" + lines[i] + "\">" + lines[i] + "</a></blockquote>"
-      var el = document.getElementById('tweets'); 
-      el.innerHTML = text;
-    }
-  });
+  BuildMoment('softwaregore.db');
   </script>
   <div id="tweets"></div>
   <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
