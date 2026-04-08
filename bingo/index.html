@@ -27,12 +27,23 @@ img {
 	padding-top: 0%;
 	display: flex;
 }
+.bingo-tile {
+	border: 0;
+	float: left;
+	position: relative;
+}
+.bingo-x {
+	border: 0;
+	position: absolute;
+	top: 0;
+	right: 0;
+}
 body {
-  background-image: url("https://kyuppin.com/IMAGES/bg2.jpg");
-  background-repeat: no-repeat;
-  background-attachment: relative;
-  background-position:top;
-  background-color: rgb(243, 243, 243);
+	background-image: url("https://kyuppin.com/IMAGES/bg2.jpg");
+	background-repeat: no-repeat;
+	background-attachment: relative;
+	background-position:top;
+	background-color: rgb(243, 243, 243);
 }
 </style>
 </head>
@@ -47,6 +58,7 @@ for (var i = 0; i < 5; i++)
 	text += "<div class=\"bingo-container\">";
 	for (var j = 0; j < 5; j++)
 	{
+		text +="<div class=\"bingo-tile\">";
 		if (i == 2 && j == 2)
 		{
 			text += "<img src=\"img/bideo jonkler.png\">";
@@ -57,10 +69,19 @@ for (var i = 0; i < 5; i++)
 			text += "<img src=\"" + tiles[k] + "\">";
 			tiles.splice(k, 1);
 		}
+		text += "</div>";
 	}
 	text += "</div>";
 }
 var el = document.getElementsByClassName("bingo-container-outer")[0];
 el.innerHTML += text;
+
+const divs = document.querySelectorAll('.bingo-tile');
+
+divs.forEach((div) => {
+	div.addEventListener('click', (event) => {
+		event.target.parentElement.innerHTML += "<img class=\"bingo-x\" src=\"img/x" + Math.floor(Math.random()*25) + ".png\" alt=\"\">";
+	});
+});
 </script>
 </body>
