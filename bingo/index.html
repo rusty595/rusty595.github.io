@@ -41,29 +41,6 @@ body {
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAhBAMAAADe7h2QAAAAGFBMVEUAAAD////MzMyAgIAAAP8AAAAAAAAAAABaBfzFAAAAAXRSTlMAQObYZgAAAAFiS0dEAIgFHUgAAAAJcEhZcwAACxMAAAsTAQCanBgAAAAHdElNRQfmDBwTIwKdMVx9AAAAYklEQVQY02MwhgEDBiAwFIQCUxSecQAyz8gUmWeoHIDMEzJF4oWGhgYgeIKCQoR5QibOigiesIuLIS4eqkp8Zrq4uDgi6UPhCVKFBzTTCcU+kKQQqX4njmekhAABDKFIIAAA8081lqIumpwAAAAASUVORK5CYII=">
 Page cannot be found
 </p><br/-->
-<script>
-var tiles = ["img/belgië.png", "img/bognor.png", "img/bóbr.png", "img/focks.png", "img/he said it.png", "img/jersey 2.png", "img/kmt.png", "img/kot.png", "img/LA.png", "img/lennon.png", "img/me.png", "img/me.png", "img/mpreg.png", "img/nihon.png", "img/onyon.png", "img/racc.png", "img/racecar.png", "img/rrat.png", "img/segs.png", "img/trans wrongs.png", "img/UK.png", "img/untranslatable.png", "img/very large cone.png", "img/wyrm.png", "img/yike.png"];
-
-var el = document.getElementsByClassName('bingo-container-outer')[0];
-for (var i = 0; i < 5; i++)
-{
-	el.innerHTML += "<div class=\"bingo-container\">";
-	for (var j = 0; j < 5; j++)
-	{
-		if (i == 2 && j == 2)
-		{
-			el.innerHTML += "<img src=\"bideo jonkler.png\">";
-		}
-		else
-		{
-			var k = Math.floor(Math.random()*tiles.length);
-			el.innerHTML += "<img src=\"" + tiles[k] + "\">";
-			tiles.splice(k, 1);
-		}
-	}
-	el.innerHTML += "</div>";
-}
-</script>
 <div class="bingo-container-outer">
 	<!--div class="bingo-container">
 		<img src="img/belgië.png">
@@ -101,5 +78,28 @@ for (var i = 0; i < 5; i++)
 		<img src="img/yike.png">
 	</div-->
 </div>
+<script>
+var tiles = ["img/belgië.png", "img/bognor.png", "img/bóbr.png", "img/focks.png", "img/he said it.png", "img/jersey 2.png", "img/kmt.png", "img/kot.png", "img/LA.png", "img/lennon.png", "img/me.png", "img/me.png", "img/mpreg.png", "img/nihon.png", "img/onyon.png", "img/racc.png", "img/racecar.png", "img/rrat.png", "img/segs.png", "img/trans wrongs.png", "img/UK.png", "img/untranslatable.png", "img/very large cone.png", "img/wyrm.png", "img/yike.png"];
+
+var el = document.getElementsByClassName("bingo-container-outer")[0];
+for (var i = 0; i < 5; i++)
+{
+	el.innerHTML += "<div class=\"bingo-container\">";
+	for (var j = 0; j < 5; j++)
+	{
+		if (i == 2 && j == 2)
+		{
+			el.innerHTML += "<img src=\"bideo jonkler.png\">";
+		}
+		else
+		{
+			var k = Math.floor(Math.random()*tiles.length);
+			el.innerHTML += "<img src=\"" + tiles[k] + "\">";
+			tiles.splice(k, 1);
+		}
+	}
+	el.innerHTML += "</div>";
+}
+</script>
 <!--p><a href="/"><img style="image-rendering: pixelated" src="../img/home.png"></a> <a href="/">Return home.</a></p-->
 </body>
