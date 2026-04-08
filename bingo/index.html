@@ -84,21 +84,21 @@ var tiles = ["img/belgië.png", "img/bognor.png", "img/bóbr.png", "img/focks.pn
 var el = document.getElementsByClassName("bingo-container-outer")[0];
 for (var i = 0; i < 5; i++)
 {
-	el.innerHTML += "<div class=\"bingo-container\">";
+	el.innerText += "<div class=\"bingo-container\">";
 	for (var j = 0; j < 5; j++)
 	{
 		if (i == 2 && j == 2)
 		{
-			el.innerHTML += "<img src=\"bideo jonkler.png\">";
+			el.innerText += "<img src=\"img/bideo jonkler.png\">";
 		}
 		else
 		{
 			var k = Math.floor(Math.random()*tiles.length);
-			el.innerHTML += "<img src=\"" + tiles[k] + "\">";
+			el.innerText += "<img src=\"" + tiles[k] + "\">";
 			tiles.splice(k, 1);
 		}
 	}
-	el.innerHTML += "</div>";
+	el.innerText += "</div>";
 }
 </script>
 <!--p><a href="/"><img style="image-rendering: pixelated" src="../img/home.png"></a> <a href="/">Return home.</a></p-->
