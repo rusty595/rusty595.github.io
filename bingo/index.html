@@ -80,26 +80,27 @@ Page cannot be found
 </div>
 <script>
 var tiles = ["img/belgië.png", "img/bognor.png", "img/bóbr.png", "img/focks.png", "img/he said it.png", "img/jersey 2.png", "img/kmt.png", "img/kot.png", "img/LA.png", "img/lennon.png", "img/me.png", "img/me.png", "img/mpreg.png", "img/nihon.png", "img/onyon.png", "img/racc.png", "img/racecar.png", "img/rrat.png", "img/segs.png", "img/trans wrongs.png", "img/UK.png", "img/untranslatable.png", "img/very large cone.png", "img/wyrm.png", "img/yike.png"];
-
-var el = document.getElementsByClassName("bingo-container-outer")[0];
+var text = "";
 for (var i = 0; i < 5; i++)
 {
-	el.innerText += "<div class=\"bingo-container\">";
+	text += "<div class=\"bingo-container\">";
 	for (var j = 0; j < 5; j++)
 	{
 		if (i == 2 && j == 2)
 		{
-			el.innerText += "<img src=\"img/bideo jonkler.png\">";
+			text += "<img src=\"img/bideo jonkler.png\">";
 		}
 		else
 		{
 			var k = Math.floor(Math.random()*tiles.length);
-			el.innerText += "<img src=\"" + tiles[k] + "\">";
+			text += "<img src=\"" + tiles[k] + "\">";
 			tiles.splice(k, 1);
 		}
 	}
-	el.innerText += "</div>";
+	text += "</div>";
 }
+var el = document.getElementsByClassName("bingo-container-outer")[0];
+el.innerHTML += text;
 </script>
 <!--p><a href="/"><img style="image-rendering: pixelated" src="../img/home.png"></a> <a href="/">Return home.</a></p-->
 </body>
